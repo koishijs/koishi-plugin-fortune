@@ -20,7 +20,7 @@ npm install koishi-plugin-fortune
 module.exports = {
     plugins: { 
         "/path/to/fortune/index.js": {
-              header: '今日 ({date}) 的占卜结果:\n',
+              header: '今日 ({{date}}) 的占卜结果:\n',
               masterKey: 'my-master-key',
               results: ['开心', '不开心']
         }
@@ -42,6 +42,7 @@ export interface Config {
   header?: string;
   masterKey?: string;
   results: string[];
+  useDatabase?: boolean;
 }
 ```
 
@@ -52,6 +53,18 @@ export interface Config {
 * `masterKey` 占卜随机密钥。占卜结果会由 **日期** **用户ID** **masterKey** 唯一确定。
 
 * `results` 所有可能的占卜结果。
+
+* `useDatabase` 从数据库获取用户名。
+
+### 渲染项目
+
+位于 `header` 和 `results` 的项目，可以用 Mustache 模板进行填写字段用于渲染。具体如下。
+
+* `id` 用户的 QQ 号。
+
+* `name` 用户的昵称。
+
+* `date` 当前日期 ，如 `2021-10-2` 。
 
 ## 命令
 

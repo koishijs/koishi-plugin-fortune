@@ -14,11 +14,11 @@ export function getTodayBuffer() {
 }
 
 export function getRandomState(id: string, masterKey?: string) {
-  const hash = createHash('md5').update(id).update(getTodayBuffer());
+  const hash = createHash('sha512').update(id).update(getTodayBuffer());
   if (masterKey) {
     hash.update(masterKey);
   }
-  return hash.digest().readUInt32LE(0);
+  return parseInt(hash.digest('hex'), 16) % 4294967295;
 }
 
 export function getRandomValue(id: string, masterKey?: string) {
