@@ -20,7 +20,6 @@ npm install koishi-plugin-fortune
 module.exports = {
     plugins: { 
         "/path/to/fortune/index.js": {
-            adminContext: (ctx) => ctx.private(),
               header: '今日 ({date}) 的占卜结果:\n',
               masterKey: 'my-master-key',
               results: ['开心', '不开心']
