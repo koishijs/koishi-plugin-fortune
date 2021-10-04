@@ -1,5 +1,5 @@
 import 'source-map-support/register';
-import { Context } from 'koishi-core';
+import { Context } from 'koishi';
 import { Config, MyPlugin } from './plugin';
 export { Config } from './plugin';
 
