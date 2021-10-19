@@ -46,8 +46,8 @@ export class MyPlugin {
     return result;
   }
   apply(ctx: Context, config: Config) {
-    ctx.on('connect', () => {
-      if (ctx.database && this.config.useDatabase) this.useDatabase = true;
+    ctx.on('service/database', () => {
+      if (this.config.useDatabase) this.useDatabase = !!ctx.database;
     });
     this.ctx = ctx;
     this.config = Schema.validate(config, this.schema);
