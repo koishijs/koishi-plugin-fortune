@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://code.mycard.moe/nanahira/koishi-plugin-fortune.git"
+    "url": "https://github.com/koishijs/koishi-plugin-fortune.git"
   },
-  "author": "Nanahira",
+  "author": "Nanahira <nanahira@momobako.com>",
   "license": "MIT",
   "keywords": [
     "Koishi.js",
@@ -21,9 +21,9 @@
     "onebot"
   ],
   "bugs": {
-    "url": "https://code.mycard.moe/nanahira/koishi-plugin-fortune/issues"
+    "url": "https://github.com/koishijs/koishi-plugin-fortune/issues"
   },
-  "homepage": "https://code.mycard.moe/nanahira/koishi-plugin-fortune",
+  "homepage": "https://github.com/koishijs/koishi-plugin-fortune",
   "dependencies": {
     "source-map-support": "^0.5.20"
   },
