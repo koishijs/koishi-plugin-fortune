@@ -7,7 +7,7 @@ import Mustache from 'mustache';
 export interface Config {
   header?: string;
   masterKey?: string;
-  results: string[];
+  results?: string[];
   useDatabase?: boolean;
 }
 
@@ -50,7 +50,7 @@ export class MyPlugin {
       if (this.config.useDatabase) this.useDatabase = !!ctx.database;
     });
     this.ctx = ctx;
-    this.config = Schema.validate(config, this.schema);
+    this.config = config;
     ctx
       .command('fortune', '进行占卜')
       .usage('占卜结果每天固定。')
