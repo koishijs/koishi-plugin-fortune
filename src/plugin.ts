@@ -20,7 +20,7 @@ export class MyPlugin {
     return Mustache.render(template, view, null, { escape: (v) => v });
   }
   schema: Schema<Config> = Schema.object({
-    header: Schema.string('占卜结果的标题，会出现在结果首部。'),
+    header: Schema.string().description('占卜结果的标题，会出现在结果首部。'),
     masterKey: Schema.string(
       '占卜随机密钥。占卜结果会由 **日期** **用户ID** **masterKey** 唯一确定。',
     ),
