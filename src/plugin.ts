@@ -21,11 +21,15 @@ export class MyPlugin {
   }
   schema: Schema<Config> = Schema.object({
     header: Schema.string().description('占卜结果的标题，会出现在结果首部。'),
-    masterKey: Schema.string(
+    masterKey: Schema.string().description(
       '占卜随机密钥。占卜结果会由 **日期** **用户ID** **masterKey** 唯一确定。',
     ),
-    useDatabase: Schema.boolean('从数据库获取用户名。').default(false),
-    results: Schema.array(Schema.string(), '所有可能的占卜结果。').required(),
+    useDatabase: Schema.boolean()
+      .description('从数据库获取用户名。')
+      .default(false),
+    results: Schema.array(Schema.string())
+      .description('所有可能的占卜结果。')
+      .required(),
   });
   private getResult(userId: string, name: string) {
     if (!userId) {
