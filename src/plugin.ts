@@ -4,7 +4,7 @@ import { pickOne } from './random';
 import moment from 'moment';
 import Mustache from 'mustache';
 
-export interface Config {
+export interface PluginConfig {
   header?: string;
   masterKey?: string;
   results?: string[];
@@ -13,13 +13,13 @@ export interface Config {
 
 export class MyPlugin {
   private useDatabase = false;
-  private config: Config;
+  private config: PluginConfig;
   private ctx: Context;
   name = 'fortune-main';
   private render(template: string, view: any) {
     return Mustache.render(template, view, null, { escape: (v) => v });
   }
-  schema: Schema<Config> = Schema.object({
+  schema: Schema<PluginConfig> = Schema.object({
     header: Schema.string().description('占卜结果的标题，会出现在结果首部。'),
     masterKey: Schema.string().description(
       '占卜随机密钥。占卜结果会由 **日期** **用户ID** **masterKey** 唯一确定。',
@@ -49,7 +49,7 @@ export class MyPlugin {
     );
     return result;
   }
-  apply(ctx: Context, config: Config) {
+  apply(ctx: Context, config: PluginConfig) {
     ctx.on('service', (name) => {
       if (this.config.useDatabase && name === 'database') this.useDatabase = !!ctx.database;
     });
