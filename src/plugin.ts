@@ -51,7 +51,8 @@ export class MyPlugin {
   }
   apply(ctx: Context, config: PluginConfig) {
     ctx.on('service', (name) => {
-      if (this.config.useDatabase && name === 'database') this.useDatabase = !!ctx.database;
+      if (this.config.useDatabase && name === 'database')
+        this.useDatabase = !!ctx.database;
     });
     this.ctx = ctx;
     this.config = config;
