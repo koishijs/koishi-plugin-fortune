@@ -7,13 +7,15 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"declaration": true,
-		"sourceMap": true
+		"sourceMap": true,
+		"skipLibCheck": true
 	},
 	"compileOnSave": true,
 	"allowJs": true,
 	"include": [
 		"*.ts",
 		"src/**/*.ts",
-		"test/**/*.ts"
+		"tests/**/*.ts",
+		"dev/**/*.ts"
 	]
 }
