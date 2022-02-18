@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-fortune",
-  "version": "9.2.0",
+  "version": "9.2.1",
   "description": "Koishi 的算卦插件",
   "main": "dist/index.js",
   "typings": "dist/src/index.d.ts",
