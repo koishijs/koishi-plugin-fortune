@@ -1,4 +1,4 @@
-import 'source-map-support/register';
+// import 'source-map-support/register';
 import { Context, Schema } from 'koishi';
 import { pickOne } from './random';
 import moment from 'moment';

@@ -29,8 +29,7 @@
   "dependencies": {
     "@stdlib/random-base-mt19937": "^0.0.5",
     "moment": "^2.29.1",
-    "mustache": "^4.2.0",
-    "source-map-support": "^0.5.20"
+    "mustache": "^4.2.0"
   },
   "devDependencies": {
     "@koishijs/plugin-cache-lru": "^1.0.0-rc.0",
