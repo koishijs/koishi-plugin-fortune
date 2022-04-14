@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-fortune",
-  "version": "9.5.3",
+  "version": "9.5.4",
   "description": "Koishi plugin for picking fortunes.",
   "main": "dist/index.js",
   "typings": "dist/src/index.d.ts",
