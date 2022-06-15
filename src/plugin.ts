@@ -50,10 +50,6 @@ export class MyPlugin {
     return result;
   }
   apply(ctx: Context, config: PluginConfig) {
-    ctx.on('service', (name) => {
-      if (this.config.useDatabase && name === 'database')
-        this.useDatabase = !!ctx.database;
-    });
     this.ctx = ctx;
     this.config = config;
     ctx
@@ -61,13 +57,7 @@ export class MyPlugin {
       .usage('占卜结果每天固定。')
       .userFields(['name'])
       .action(({ session }) => {
-        let name = session.author.nickname || session.author.username;
-        if (this.useDatabase) {
-          if (session.user.name) {
-            name = session.user.name;
-          }
-        }
-        return this.getResult(session.userId, name);
+        return this.getResult(session.userId, session.username);
       });
   }
 }
